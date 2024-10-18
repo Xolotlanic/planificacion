@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoevaluación - Mesoplanificación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Test de Autoevaluación - Mesoplanificación</h1>
+
+    <div class="container">
+        <form id="quizForm">
+            <div class="question">
+                <p>1. ¿Qué incluye los "Datos Generales" en una mesoplanificación?</p>
+                <input type="radio" name="q1" value="0"> Los autores del programa<br>
+                <input type="radio" name="q1" value="0"> El conjunto de textos de referencia<br>
+                <input type="radio" name="q1" value="1"> Información general de la asignatura<br>
+            </div>
+
+            <div class="question">
+                <p>2. ¿Qué se describe en la "Fundamentación/Descriptor"?</p>
+                <input type="radio" name="q2" value="1"> La relación entre asignaturas y temáticas con el perfil profesional<br>
+                <input type="radio" name="q2" value="0"> Las actividades de aprendizaje en cada unidad<br>
+                <input type="radio" name="q2" value="0"> Las horas prácticas y teóricas de cada tema<br>
+            </div>
+
+            <div class="question">
+                <p>3. ¿Qué se determina en los "Objetivos/Competencias/Resultados de Aprendizaje"?</p>
+                <input type="radio" name="q3" value="1"> El propósito de la asignatura<br>
+                <input type="radio" name="q3" value="0"> Los autores del programa<br>
+                <input type="radio" name="q3" value="0"> Los textos de referencia recomendados<br>
+            </div>
+
+            <div class="question">
+                <p>4. ¿Qué describe el "Plan Temático"?</p>
+                <input type="radio" name="q4" value="0"> Las actividades de evaluación<br>
+                <input type="radio" name="q4" value="1"> La organización de los temas con sus respectivas horas<br>
+                <input type="radio" name="q4" value="0"> Los materiales didácticos utilizados<br>
+            </div>
+
+            <div class="question">
+                <p>5. ¿Qué se evalúa en la "Evaluación para los Aprendizajes"?</p>
+                <input type="radio" name="q5" value="1"> El seguimiento y valoración del aprendizaje del estudiante<br>
+                <input type="radio" name="q5" value="0"> Las horas prácticas y teóricas de cada tema<br>
+                <input type="radio" name="q5" value="0"> Los autores del programa<br>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="calculateScore()">Enviar Respuestas</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const form = document.forms['quizForm'];
+
+            // Calificar las preguntas
+            score += parseInt(form['q1'].value);
+            score += parseInt(form['q2'].value);
+            score += parseInt(form['q3'].value);
+            score += parseInt(form['q4'].value);
+            score += parseInt(form['q5'].value);
+
+            // Mostrar el resultado
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = "Tu puntaje es: " + score + "/5";
+
+            if (score < 3) {
+                resultDiv.style.color = 'red';
+            } else {
+                resultDiv.style.color = 'green';
+            }
+        }
+    </script>
+
+</body>
+</html>

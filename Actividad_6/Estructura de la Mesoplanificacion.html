@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de la Mesoplanificación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px;
+            width: 300px;
+        }
+        .concepto {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: left;
+        }
+        /* Colores para cada opción */
+        .datos-generales { background-color: #ffcccc; color: #800000; }
+        .fundamentacion { background-color: #cce7ff; color: #004080; }
+        .plan-tematico { background-color: #fff4cc; color: #804000; }
+	.competencias { background-color: #fff400; color: #600000; }
+        .plan-analitico { background-color: #ffd9cc; color: #804000; }
+        .mediacion { background-color: #e6ccff; color: #4d004d; }
+        .evaluacion { background-color: #ffccff; color: #800080; }
+        .bibliografia { background-color: #d9d9d9; color: #404040; }
+        .autores { background-color: #ffebcc; color: #805500; }
+    </style>
+    <script>
+        function mostrarConcepto() {
+            const conceptos = {
+                "datos-generales": "Corresponde a los datos que permiten obtener información general de la asignatura o su equivalente.",
+                "fundamentacion": "Se explica la correspondencia del programa de asignatura o su equivalente con asignaturas antecesoras y sucesoras, la relación entre temáticas, aportes al Perfil profesional, los valores que se desarrollan y ejes transversales a los que tributa.",
+		"competencias": "Determinan el propósito de la asignatura o su equivalente. Son demostrables, medibles, claros y coherentes con el Perfil profesional de la carrera. En la redacción se toman en cuenta los elementos que componen el objetivo, competencia o resultado de aprendizaje.",
+                "plan-tematico": "Es la organización de temas o actividades de aprendizajes con sus respectivas horas teóricas, horas prácticas, trabajo independiente y total de horas, en correspondencia con el Plan de estudios.",
+                "plan-analitico": "Tiene correspondencia con el Plan temático. Se indican los propósitos por alcanzar en cada unidad temática y la estructura de los contenidos que comprende cada una de ellas. Se recomienda establecer criterios para la selección de contenidos fundamentales que integran las unidades temáticas.",
+                "mediacion": "Se describen por cada unidad temática las actividades de aprendizaje con sus respectivas estrategias, recursos, materiales didácticos y ambientes de aprendizaje en correspondencia con el fundamento pedagógico, mediación pedagógica de la macroplanificación, el propósito de la asignatura o su equivalente y las temáticas a desarrollar.",
+		 "evaluacion": "Es el proceso pedagógico, sistemático y reflexivo de seguimiento y valoración del aprendizaje del estudiante para orientar o reorientar el acto educativo. Su propósito es realimentar mediante juicios fundamentados los logros y dificultades del aprendizaje. La descripción de la práctica evaluativa de la asignatura o su equivalente es congruente con la mediación pedagógica. Se describen los tipos, formas, instrumentos de evaluación y el sistema de calificación adoptado por la IES y cómo se aplica en la asignatura o su equivalente, de acuerdo con lo establecido en la Normativa del Sistema de Evaluación para los Aprendizajes.",
+                "bibliografia": "Conjunto de textos de referencia consultados por los autores, incluyendo libros, revistas y artículos electrónicos indexados.",
+                "autores": "Datos de los docentes que participan en la elaboración del programa de asignaturas o su equivalente."
+            };
+
+            // Obtener el valor seleccionado
+            const seleccion = document.getElementById("mesoplanificacion").value;
+
+            // Mostrar el concepto asociado
+            const conceptoDiv = document.getElementById("concepto");
+            conceptoDiv.innerHTML = conceptos[seleccion];
+            conceptoDiv.className = "concepto " + seleccion;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Estructura de la Mesoplanificación</h1>
+        <p>Selecciona una sección de la Mesoplanificación para ver su descripción:</p>
+
+        <!-- ComboBox -->
+        <select id="mesoplanificacion" onchange="mostrarConcepto()">
+            <option value="datos-generales">1. Datos generales</option>
+            <option value="fundamentacion">2. Fundamentación / Descriptor de la asignatura</option>
+            <option value="competencias">3. Objetivos / Competencias / Resultados de aprendizaje</option>
+            <option value="plan-tematico">4. Plan temático</option>
+            <option value="plan-analitico">5. Plan analítico</option>
+            <option value="mediacion">6. Mediación pedagógica</option>
+            <option value="evaluacion">7. Evaluación para los aprendizajes</option>
+            <option value="bibliografia">8. Bibliografía básica y complementaria</option>
+            <option value="autores">9. Autores del programa</option>
+        </select>
+
+        <!-- Concepto mostrado según selección -->
+        <div id="concepto" class="concepto datos-generales">
+            Corresponde a los datos que permiten obtener información general de la asignatura o su equivalente.
+        </div>
+    </div>
+
+</body>
+</html>
