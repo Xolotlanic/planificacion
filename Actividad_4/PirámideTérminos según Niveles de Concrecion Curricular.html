@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirámide Interactiva Aleatoria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .pyramid-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+        }
+        .pyramid-item {
+            background-color: #f4c542;
+            margin: 5px;
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: grab;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pyramid-item:hover {
+            background-color: #e0b32d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pyramid-container" id="pyramid-container"></div>
+
+<script>
+    const layers = [
+        'Teorías del Aprendizaje',
+        'Modelo de Educación Nacional',
+        'Modelo Educativo Institucional',
+        'Modelo Curricular con Enfoque por Competencias',
+        'Método didáctico para el aprendizaje',
+        'Estrategias para el aprendizaje',
+        'Técnicas didácticas',
+        'Actividades de Aprendizaje'
+	'Evaluación Formativa'
+	'Macroplanificación (macro)'
+	'Mesoplanificación (micro)'
+	'Microplanificación (planes de clase)'
+    ];
+
+    // Función para mezclar (aleatorizar) las capas
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Insertar capas aleatorias en el contenedor de la pirámide
+    const pyramidContainer = document.getElementById('pyramid-container');
+    const shuffledLayers = shuffle([...layers]);
+
+    shuffledLayers.forEach(layer => {
+        const div = document.createElement('div');
+        div.className = 'pyramid-item';
+        div.draggable = true;
+        div.textContent = layer;
+
+        // Añadimos los eventos necesarios
+        div.addEventListener('dragstart', dragStart);
+        div.addEventListener('dragover', dragOver);
+        div.addEventListener('drop', drop);
+        div.addEventListener('dragend', dragEnd);
+
+        pyramidContainer.appendChild(div);
+    });
+
+    let draggedItem = null;
+
+    function dragStart(e) {
+        draggedItem = this;
+        setTimeout(() => this.style.display = 'none', 0);
+    }
+
+    function dragEnd() {
+        setTimeout(() => {
+            draggedItem.style.display = 'block';
+            draggedItem = null;
+        }, 0);
+    }
+
+    function dragOver(e) {
+        e.preventDefault();
+    }
+
+    function drop(e) {
+        e.preventDefault();
+        if (this !== draggedItem) {
+            const allItems = Array.from(pyramidContainer.children);
+            const draggedIndex = allItems.indexOf(draggedItem);
+            const targetIndex = allItems.indexOf(this);
+
+            if (draggedIndex > targetIndex) {
+                pyramidContainer.insertBefore(draggedItem, this);
+            } else {
+                pyramidContainer.insertBefore(draggedItem, this.nextSibling);
+            }
+        }
+    }
+</script>
+
+<h1>Planificación Académica: Mesoplanificación
+<BR>
+Facilitador: Ernesto Espinoza M.
+</h1>
+
+</body>
+</html>

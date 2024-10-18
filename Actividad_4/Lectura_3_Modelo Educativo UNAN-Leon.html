@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Educativo UNAN-León</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .content-section {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            margin-top: 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+<h1>
+Planificación Académica: Mesoplanificación
+<BR>
+Facilitador: Ernesto Espinoza M.
+<Hr>
+Niveles de concreción curricular<BR>
+Establecimiento de Jeraquía de Niveles a Considerar para la Planificación Académica<BR>
+Modelo Educativo UNAN-León</h1>
+</header>
+
+<div class="container">
+    <h2>Explora los hitos principales del modelo educativo</h2>
+
+    <div class="grid-container">
+        <div class="grid-item" onclick="showContent('hito1')">
+            <img src="images/filosofia.webp" alt="Filosofía Institucional">
+            <h3>Filosofía Institucional</h3>
+        </div>
+        <div class="grid-item" onclick="showContent('hito2')">
+            <img src="images/estrategia.jpeg" alt="Perspectiva Educativa">
+            <h3>Perspectiva Educativa</h3>
+        </div>
+        <div class="grid-item" onclick="showContent('hito3')">
+            <img src="images/modelocurricular.png" alt="Modelo Curricular">
+            <h3>Modelo Curricular</h3>
+        </div>
+        <div class="grid-item" onclick="showContent('hito4')">
+            <img src="images/modeloacademico.jpg" alt="Modelo Académico">
+            <h3>Modelo Académico</h3>
+        </div>
+        <div class="grid-item" onclick="showContent('hito5')">
+            <img src="images/modelopedagogico.png" alt="Modelo Pedagógico">
+            <h3>Modelo Pedagógico</h3>
+        </div>
+        <div class="grid-item" onclick="showContent('hito6')">
+            <img src="images/didactica.png" alt="Modelo Didáctico">
+            <h3>Modelo Didáctico</h3>
+        </div>
+        <div class="grid-item" onclick="showContent('hito7')">
+            <img src="images/calidad.png" alt="Aseguramiento de la Calidad">
+            <h3>Aseguramiento de la Calidad</h3>
+        </div>
+    </div>
+
+    <!-- Contenido para cada hito -->
+    <div id="hito1" class="content-section">
+        <h2>Filosofía Institucional</h2>
+        <p>El modelo educativo de la UNAN-León se basa en principios revolucionarios para el desarrollo de la sociedad, promoviendo la educación integral centrada en la persona, la familia y la comunidad.</p>
+<P>Misión<BR>
+Somos una institución Bicentenaria de educación universitaria guiada por principios revolucionarios que contribuye a la transformación y desarrollo de la sociedad, mediante la construcción y socialización de conocimientos por medio de educación integral con calidad, asumimos el Plan Nacional de Lucha contra la Pobreza para el Desarrollo Humano de nuestro pueblo. La Universidad constituye el instrumento del proyecto Revolucionario Sandinista para coadyuvar en las acciones del desarrollo humano del pueblo nicaragüense y la superación de la pobreza. Es un espacio donde se educa en valores, profesiones, ciencias y cultura para servirle al pueblo.</P>
+
+<P>Visión<BR>
+Somos una institución de educación universitaria, sandinista, comprometida con el pueblo, que asegura la defensa ideológica de la Revolución Popular Sandinista. Somos institución acreditada, con liderazgo nacional y de referencia centroamericana en la generación y transferencia de conocimientos, desarrollo social sostenible y tecnología. Líder en la educación política e integral para toda la vida, con compromiso social, con educación de calidad e inclusiva, promotora de prácticas de cuido y conservación del medio ambiente y con alianzas estratégicas nacionales e internacionales consolidadas en a favor de la solución de los problemas que enfrenta la sociedad y los desafíos del futuro.</P>
+
+
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+
+    <div id="hito2" class="content-section">
+        <h2>Perspectiva Educativa</h2>
+        <p>La UNAN-León adopta una perspectiva educativa que considera el desarrollo humano integral, abarcando aspectos ontológicos, epistemológicos, axiológicos, y sociológicos.</p>
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+
+    <div id="hito3" class="content-section">
+        <h2>Modelo Curricular</h2>
+        <p>El modelo curricular está basado en competencias, organizado en un sistema de créditos académicos. Busca fomentar una formación integral y coherente para los estudiantes.</p>
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+
+    <div id="hito4" class="content-section">
+        <h2>Modelo Académico</h2>
+        <p>El modelo académico de la UNAN-León promueve el aprendizaje activo y participativo, con modalidades presenciales, a distancia y bimodal, adaptándose a las necesidades de los estudiantes.</p>
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+
+    <div id="hito5" class="content-section">
+        <h2>Modelo Pedagógico</h2>
+        <p>El enfoque pedagógico de la UNAN-León está basado en el constructivismo, donde el estudiante es el protagonista de su aprendizaje y el docente actúa como facilitador.</p>
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+
+    <div id="hito6" class="content-section">
+        <h2>Modelo Didáctico</h2>
+        <p>El modelo didáctico se centra en el desarrollo de competencias mediante actividades de enseñanza planificadas, con una evaluación formativa y realimentación del proceso educativo.</p>
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+
+    <div id="hito7" class="content-section">
+        <h2>Aseguramiento de la Calidad</h2>
+        <p>El sistema de aseguramiento de la calidad en la UNAN-León busca la mejora continua, la evaluación constante y el control de procesos para garantizar la excelencia educativa.</p>
+        <a href="#" class="back-button" onclick="hideContent()">Regresar</a>
+    </div>
+</div>
+
+<script>
+    function showContent(hito) {
+        document.querySelectorAll('.content-section').forEach(section => section.style.display = 'none');
+        document.getElementById(hito).style.display = 'block';
+    }
+
+    function hideContent() {
+        document.querySelectorAll('.content-section').forEach(section => section.style.display = 'none');
+    }
+</script>
+
+</body>
+</html>

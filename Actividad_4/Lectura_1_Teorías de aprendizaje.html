@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro Virtual - Teorías del Aprendizaje</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .book-container {
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .content {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+<h1>
+Planificación Académica: Mesoplanificación
+<BR>
+Facilitador: Ernesto Espinoza M.
+<Hr>
+Niveles de concreción curricular
+Establecimiento de Jeraquía de Niveles a Considerar para la Planificación Académica
+</h1>
+
+<div class="book-container">
+    <h1 id="page-title"></h1>
+    <div class="content" id="page-content"></div>
+    <div class="navigation">
+        <button id="prev-btn" onclick="prevPage()">Anterior</button>
+        <button id="next-btn" onclick="nextPage()">Siguiente</button>
+    </div>
+</div>
+
+<script>
+    const book = [
+        {
+            title: "Teoría de aprendizaje conductual",
+            content: "El conductismo afirma que a todo estímulo le sigue una respuesta basada en el ambiente en donde se encuentra el individuo. Los estudios referentes a la teoría conductista parten de la psicología experimental siendo los teóricos relacionados Iván Pavlov, John Watson y B.F. Skinner."
+        },
+        {
+            title: "Teoría cognitiva",
+            content: "El cognitivismo estudia cómo la mente interpreta, procesa y almacena la información en la memoria. Los autores principales de esta teoría son Jean Piaget, David Ausubel y Jerome Brunner."
+        },
+        {
+            title: "Teoría constructivista",
+            content: "El constructivismo indica que el aprendizaje no se obtiene de forma pasiva, sino activa. El conocimiento es una construcción del ser humano como producto de su relación con el entorno. Teóricos: Jean Piaget, David Ausubel, Jerome Bruner y Lev Vygotsky."
+        },
+        {
+            title: "Teoría del aprendizaje significativo",
+            content: "Desarrollada por David Ausubel, esta teoría propone que el ser humano relaciona los nuevos conocimientos con los que ya posee, logrando un aprendizaje de calidad y comprensión, contrario al aprendizaje memorístico."
+        },
+        {
+            title: "Teoría del aprendizaje por descubrimiento",
+            content: "Jerome Bruner desarrolla esta teoría donde el aprendizaje es más efectivo cuando el alumnado enfrenta problemas para solucionarlos y transferirlos, estimulando su participación activa en el proceso de aprendizaje."
+        },
+        {
+            title: "Teoría del socio-constructivismo",
+            content: "Lev Vygotsky describe el aprendizaje como un proceso donde la interacción social es clave para la obtención del conocimiento. La socialización y el conocimiento previo juegan roles clave en este enfoque."
+        },
+        {
+            title: "Teoría del procesamiento de la información",
+            content: "Esta teoría postula que el ser humano es un procesador de información, donde su interacción es con representaciones subjetivas del entorno, obteniendo aprendizaje por procesos cognitivos. Defendida por Robert Gagné y Richard Mayer."
+        },
+        {
+            title: "Teoría del aprendizaje social",
+            content: "Representada por Albert Bandura, esta teoría postula que el aprendizaje es consecuencia de procesos mentales y de la interacción con el ambiente. El modelaje es esencial en el aprendizaje."
+        },
+        {
+            title: "Teoría de las inteligencias múltiples",
+            content: "Howard Gardner propone que todo ser humano posee ocho inteligencias, y su desarrollo depende de la exposición cultural y ambiental. El aprendizaje es más efectivo cuando se adapta al perfil individual del estudiante."
+        }
+    ];
+
+    let currentPage = 0;
+
+    function showPage(pageIndex) {
+        document.getElementById("page-title").innerText = book[pageIndex].title;
+        document.getElementById("page-content").innerText = book[pageIndex].content;
+        document.getElementById("prev-btn").disabled = pageIndex === 0;
+        document.getElementById("next-btn").disabled = pageIndex === book.length - 1;
+    }
+
+    function prevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < book.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    // Mostrar la primera página al cargar
+    showPage(currentPage);
+</script>
+
+</body>
+</html>

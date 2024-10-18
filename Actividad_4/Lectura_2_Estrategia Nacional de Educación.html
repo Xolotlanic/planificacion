@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Nacional: Bendiciones y Victorias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+
+        .grid-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .summary-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+            margin-top: 20px;
+        }
+
+        .summary-section h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+<h1>
+Planificación Académica: Mesoplanificación
+<BR>
+Facilitador: Ernesto Espinoza M.
+<Hr>
+Niveles de concreción curricular<BR>
+Establecimiento de Jeraquía de Niveles a Considerar para la Planificación Académica<BR>
+Estrategia Nacional de Educación para todas las Modalidades: <BR>
+Bendiciones y Victorias 2024-2026
+</h1>
+    </header>
+
+    <div class="container">
+        <h2>Selecciona un eje para conocer su resumen:</h2>
+        <div class="grid-container">
+            <div class="grid-item" onclick="showSummary(1)">
+                <img src="images/1.png" alt="Eje 1">
+                <p>Eje 1: Educación para la Vida</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(2)">
+                <img src="images/2.png" alt="Eje 2">
+                <p>Eje 2: Educación en Valores</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(3)">
+                <img src="images/3.png" alt="Eje 3">
+                <p>Eje 3: Educación Creativa</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(4)">
+                <img src="images/4.png" alt="Eje 4">
+                <p>Eje 4: Educación Artística y Cultural</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(5)">
+                <img src="images/5.png" alt="Eje 5">
+                <p>Eje 5: Historia e Identidad Nacional</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(6)">
+                <img src="images/6.png" alt="Eje 6">
+                <p>Eje 6: Ambiente y Naturaleza</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(7)">
+                <img src="images/7.png" alt="Eje 7">
+                <p>Eje 7: Cambio Climático</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(8)">
+                <img src="images/8.png" alt="Eje 8">
+                <p>Eje 8: Educación Física y Deportiva</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(9)">
+                <img src="images/9.png" alt="Eje 9">
+                <p>Eje 9: Educación Especial Incluyente</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(10)">
+                <img src="images/10.png" alt="Eje 10">
+                <p>Eje 10: Ciencias</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(11)">
+                <img src="images/11.png" alt="Eje 11">
+                <p>Eje 11: Investigación e Innovación</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(12)">
+                <img src="images/12.png" alt="Eje 12">
+                <p>Eje 12: Cobertura Amplia con Inclusión y Equidad</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(13)">
+                <img src="images/13.png" alt="Eje 13">
+                <p>Eje 13: Calidad Educativa</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(14)">
+                <img src="images/14.png" alt="Eje 14">
+                <p>Eje 14: Formación Docente</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(15)">
+                <img src="images/15.png" alt="Eje 15">
+                <p>Eje 15: Fortalecimiento Institucional</p>
+            </div>
+            <div class="grid-item" onclick="showSummary(16)">
+                <img src="images/16.png" alt="Eje 16">
+                <p>Eje 16: Infraestructura y Equipamiento</p>
+            </div>
+        </div>
+
+        <div id="summary" class="summary-section">
+            <h2 id="summary-title"></h2>
+            <p id="summary-text"></p>
+        </div>
+    </div>
+
+    <script>
+        const summaries = {
+            1: {
+                title: "Eje 1: Educación para la Vida",
+                text: "Este eje promueve el aprendizaje de habilidades, capacidades y valores para la formación integral de las personas en su vida cotidiana y laboral."
+            },
+            2: {
+                title: "Eje 2: Educación en Valores",
+                text: "Se centra en la enseñanza y práctica de valores fundamentales como el respeto, la honestidad, la solidaridad y el cuidado del entorno para una convivencia digna y pacífica."
+            },
+            3: {
+                title: "Eje 3: Educación Creativa",
+                text: "Fomenta la curiosidad, el pensamiento crítico y la creatividad en los estudiantes para que puedan enfrentar y resolver problemas de manera innovadora."
+            },
+            4: {
+                title: "Eje 4: Educación Artística y Cultural",
+                text: "Busca integrar las expresiones artísticas y culturales en el desarrollo educativo, resaltando la importancia del arte y la cultura en la identidad nacional."
+            },
+            5: {
+                title: "Eje 5: Historia e Identidad Nacional",
+                text: "Este eje fomenta el conocimiento de la historia y la identidad cultural de Nicaragua, reforzando el orgullo patrio y la valoración de su patrimonio."
+            },
+            6: {
+                title: "Eje 6: Ambiente y Naturaleza",
+                text: "Fortalece la educación ambiental con enfoque en la conservación y protección del entorno natural, formando ciudadanos conscientes de los recursos naturales."
+            },
+            7: {
+                title: "Eje 7: Cambio Climático",
+                text: "Promueve la formación sobre la crisis climática y fomenta la implementación de prácticas sostenibles para mitigar sus efectos a través de la educación."
+            },
+            8: {
+                title: "Eje 8: Educación Física y Deportiva",
+                text: "Fomenta la actividad física y los deportes como una herramienta de desarrollo integral, promoviendo hábitos saludables y una vida libre de adicciones."
+            },
+            9: {
+                title: "Eje 9: Educación Especial Incluyente",
+                text: "Busca asegurar el acceso a una educación de calidad para todas las personas, independientemente de sus capacidades, promoviendo la igualdad de oportunidades."
+            },
+            10: {
+                title: "Eje 10: Ciencias",
+                text: "Proporciona habilidades científicas que permiten a los estudiantes comprender fenómenos naturales y generar conocimientos para el desarrollo productivo."
+            },
+            11: {
+                title: "Eje 11: Investigación e Innovación",
+                text: "Este eje fomenta la investigación y el desarrollo de nuevas ideas y tecnologías para el progreso educativo, económico y social del país."
+            },
+            12: {
+                title: "Eje 12: Cobertura Amplia con Inclusión y Equidad",
+                text: "Se enfoca en ampliar el acceso a la educación de calidad en todas las regiones y modalidades, asegurando la inclusión y equidad en el sistema educativo."
+            },
+            13: {
+                title: "Eje 13: Calidad Educativa",
+                text: "Busca mejorar los estándares de enseñanza y aprendizaje, asegurando que la educación sea pertinente, relevante y de alta calidad."
+            },
+            14: {
+                title: "Eje 14: Formación Docente",
+                text: "Fortalece la preparación y actualización continua de los docentes para garantizar una enseñanza eficiente y adaptada a las nuevas realidades."
+            },
+            15: {
+                title: "Eje 15: Fortalecimiento Institucional",
+                text: "Se enfoca en mejorar la gestión académica y administrativa del sistema educativo, promoviendo una mejor atención a estudiantes y comunidades."
+            },
+            16: {
+                title: "Eje 16: Infraestructura y Equipamiento",
+                text: "Prioriza la modernización de la infraestructura educativa y el equipamiento necesario para crear ambientes de aprendizaje inclusivos y de calidad."
+            }
+        };
+
+        function showSummary(eje) {
+            const summary = summaries[eje];
+            if (summary) {
+                document.getElementById('summary-title').innerText = summary.title;
+                document.getElementById('summary-text').innerText = summary.text;
+                document.getElementById('summary').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
