@@ -14,7 +14,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
+
         .pyramid-container {
             display: flex;
             flex-direction: column;
@@ -22,6 +24,7 @@
             align-items: center;
             width: 400px;
         }
+
         .pyramid-item {
             background-color: #f4c542;
             margin: 5px;
@@ -34,12 +37,22 @@
             font-weight: bold;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .pyramid-item:hover {
             background-color: #e0b32d;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+
+<h1>Planificación Académica: Mesoplanificación<br>Facilitador: Ernesto Espinoza M.</h1>
 
 <div class="pyramid-container" id="pyramid-container"></div>
 
@@ -52,11 +65,11 @@
         'Método didáctico para el aprendizaje',
         'Estrategias para el aprendizaje',
         'Técnicas didácticas',
-        'Actividades de Aprendizaje'
-	'Evaluación Formativa'
-	'Macroplanificación (macro)'
-	'Mesoplanificación (micro)'
-	'Microplanificación (planes de clase)'
+        'Actividades de Aprendizaje',
+        'Evaluación Formativa',
+        'Macroplanificación (macro)',
+        'Mesoplanificación (micro)',
+        'Microplanificación (planes de clase)'
     ];
 
     // Función para mezclar (aleatorizar) las capas
@@ -120,11 +133,6 @@
         }
     }
 </script>
-
-<h1>Planificación Académica: Mesoplanificación
-<BR>
-Facilitador: Ernesto Espinoza M.
-</h1>
 
 </body>
 </html>
