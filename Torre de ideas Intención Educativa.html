@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lluvia de Ideas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #input-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #idea-input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #add-button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #ideas-tower {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .idea-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        #concept-builder {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #concept-output {
+            background-color: #fff;
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #clear-button {
+            padding: 10px 15px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+Planificación Académica: Mesoplanificación
+<BR>
+Facilitador: Ernesto Espinoza M.
+<Hr>
+¿Qué es la Intencionalidad Educativa?
+Lluvia de Ideas
+</h1>
+
+<div id="input-container">
+    <input type="text" id="idea-input" placeholder="Ingresa una palabra o idea">
+    <button id="add-button">Agregar a la Torre</button>
+</div>
+
+<div id="ideas-tower">
+    <h2>Torre de Ideas</h2>
+    <div id="ideas-list">
+        <!-- Las ideas aparecerán aquí -->
+    </div>
+</div>
+
+<div id="concept-builder">
+    <h2>Construir un Concepto</h2>
+    <textarea id="concept-output" rows="6" placeholder="Escribe tu concepto aquí..."></textarea>
+    <br>
+    <button id="clear-button">Limpiar Torre</button>
+</div>
+
+<script>
+    const ideasList = document.getElementById('ideas-list');
+    const ideaInput = document.getElementById('idea-input');
+    const addButton = document.getElementById('add-button');
+    const conceptOutput = document.getElementById('concept-output');
+    const clearButton = document.getElementById('clear-button');
+
+    let ideas = [];
+
+    // Agregar idea a la lista
+    addButton.addEventListener('click', function() {
+        const idea = ideaInput.value.trim();
+        if (idea !== "") {
+            ideas.push(idea);
+            displayIdeas();
+            ideaInput.value = "";
+            ideaInput.focus();
+        }
+    });
+
+    // Mostrar ideas en la torre
+    function displayIdeas() {
+        ideasList.innerHTML = "";
+        ideas.forEach(function(idea) {
+            const div = document.createElement('div');
+            div.classList.add('idea-item');
+            div.textContent = idea;
+            ideasList.appendChild(div);
+        });
+    }
+
+    // Limpiar lista y área de construcción de concepto
+    clearButton.addEventListener('click', function() {
+        ideas = [];
+        displayIdeas();
+        conceptOutput.value = "";
+    });
+</script>
+
+</body>
+</html>
